@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:movie_search/view/movie_detail_page.dart';
+import 'package:movie_search/view/movie_home_page.dart';
+import 'package:movie_search/view/movie_splash_page.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => const SplashScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/detail': (context) => const DetailScreen(),
+      },
     ),
   );
-}
-
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
 }
